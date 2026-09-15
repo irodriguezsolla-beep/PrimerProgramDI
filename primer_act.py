@@ -1,12 +1,15 @@
 import sys
 from PyQt6.QtWidgets import (QMainWindow, QApplication, QVBoxLayout, QWidget,QLabel,QLineEdit)
-
+from PyQt6.QtGui import QColor, QPalette
 class FiestraPrincipal (QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Mi primera aplicación QL")
         self.setMinimumSize(300,200)
         self.setMaximumSize(500,400)
+        paleta = self.palette()
+        paleta.setColor(QPalette.ColorRole.Window, QColor("aquaMarine"))
+        self.setPalette(paleta)
         self.show()
 
 if __name__ == '__main__':

@@ -8,8 +8,13 @@ class FiestraPrincipal (QMainWindow):
         self.setMinimumSize(300,200)
         self.setMaximumSize(500,400)
         paleta = self.palette()
-        paleta.setColor(QPalette.ColorRole.Window, QColor("aquaMarine"))
+        paleta.setColor(QPalette.ColorRole.Window, QColor("magenta"))
         self.setPalette(paleta)
+
+        boton = QPushButton("Principal")
+        etiqueta = QLabel("Hola a todos")
+        self.setCentralWidget(boton)
+        self.setCentralWidget(etiqueta)
         self.show()
 
 if __name__ == '__main__':

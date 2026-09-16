@@ -18,12 +18,13 @@ class FiestraPrincipal(QMainWindow):
 
         # Creación de widgets
         boton = QPushButton("Principal")
-        boton.clicked.connect(self.on_boton_clicked)
-
-        # Asignación correcta a las variables de instancia (self.)
         self.etiqueta = QLabel("ola a todos")
         self.cuadroTexto = QLineEdit()
         self.cuadroTexto.setPlaceholderText("Introduce o teu nome")
+
+        # Conectamos TANTO el botón COMO la tecla Enter (returnPressed) a la misma función
+        boton.clicked.connect(self.on_boton_clicked)
+        self.cuadroTexto.returnPressed.connect(self.on_boton_clicked)
 
         # Configuración del layout
         caixaV = QVBoxLayout()
